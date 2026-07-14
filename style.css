@@ -1,0 +1,336 @@
+/* ==========================================================================
+   1. VARIABLES & CONFIGURATION GÉNÉRALE (Thème Sombre & Cyberpunk)
+   ========================================================================== */
+:root {
+    --bg-main: #0b0f19;        /* Fond de page ultra sombre */
+    --bg-card: #131c2e;        /* Fond des blocs et boîtes */
+    --primary: #6366f1;        /* Violet Électrique */
+    --primary-glow: rgba(99, 102, 241, 0.2);
+    --secondary: #10b981;      /* Vert Émeraude */
+    --secondary-glow: rgba(16, 185, 129, 0.2);
+    --text-main: #f8fafc;      /* Blanc cassé brillant */
+    --text-muted: #94a3b8;     /* Gris pour descriptions */
+    --border-color: #233149;   /* Bordures discrètes */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. BARRE DE NAVIGATION (Navbar)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 32px; /* Remplacement de 1.2rem 2rem */
+    background-color: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px; /* Remplacement de 1.4rem */
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 24px; /* Remplacement de 1.5rem */
+    font-size: 15px;  /* Remplacement de 0.95rem */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   3. SECTION HÉRO / ACCUEIL
+   ========================================================================== */
+.hero-section {
+    max-width: 900px;
+    margin: 64px auto; /* Remplacement de 4rem */
+    text-align: center;
+    padding: 0 24px;   /* Remplacement de 1.5rem */
+}
+
+.hero-section h1 {
+    font-size: 48px; /* Remplacement de 3rem */
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px; /* Remplacement de 1.5rem */
+    background: linear-gradient(135deg, #ffffff 40%, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+    color: var(--text-muted);
+    font-size: 19px; /* Remplacement de 1.2rem */
+    max-width: 650px;
+    margin: 0 auto 40px auto; /* Remplacement de 2.5rem */
+}
+
+.btn-main {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #4f46e5);
+    color: white;
+    text-decoration: none;
+    padding: 14px 32px; /* Remplacement de 0.9rem 2rem */
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px var(--primary-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ==========================================================================
+   4. STRUCTURE DE LA ZONE PRINCIPALE (Container & Boxes)
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 80px 24px; /* Remplacement des rems */
+}
+
+.wizard-box, .results-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px; /* Remplacement de 2.5rem */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 48px; /* Remplacement de 3rem */
+}
+
+.wizard-box h2, .results-box h2 {
+    font-size: 28px; /* Remplacement de 1.8rem */
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.wizard-box > p {
+    color: var(--text-muted);
+    margin-bottom: 32px; /* Remplacement de 2rem */
+    font-size: 15px;    /* Remplacement de 0.95rem */
+}
+
+/* ==========================================================================
+   5. FORMULAIRE AMÉLIORÉ
+   ========================================================================== */
+#form-orientation {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Remplacement de 1.5rem */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 15px; /* Remplacement de 0.95rem */
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.form-group select {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px; /* Remplacement des rems */
+    font-size: 16px;    /* Remplacement de 1rem */
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* Groupes de Case à cocher */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Remplacement de 0.75rem */
+    cursor: pointer;
+    background-color: rgba(15, 23, 42, 0.4);
+    padding: 16px; /* Remplacement de 1rem */
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+    transition: background-color 0.3s;
+}
+
+.checkbox-group label:hover {
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 19px;  /* Remplacement de 1.2rem */
+    height: 19px; /* Remplacement de 1.2rem */
+    accent-color: var(--secondary);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--secondary), #059669);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px; /* Remplacement de 1rem */
+    font-size: 17px; /* Remplacement de 1.05rem */
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--secondary-glow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 16px; /* Remplacement de 1rem */
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* ==========================================================================
+   6. GRILLE DE RÉSULTATS & CARTES D'IA
+   ========================================================================== */
+.hidden {
+    display: none !important;
+}
+
+.grid-ia {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px; /* Remplacement de 2rem */
+    margin-top: 32px; /* Remplacement de 2rem */
+}
+
+.card-ia {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px; /* Remplacement de 1.5rem */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-ia:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.15);
+}
+
+.score-tag {
+    display: inline-block;
+    font-size: 13px; /* Remplacement de 0.8rem */
+    font-weight: 700;
+    color: var(--primary);
+    background-color: var(--primary-glow);
+    padding: 4px 10px; /* Remplacement des rems */
+    border-radius: 4px;
+    margin-bottom: 12px; /* Remplacement de 0.75rem */
+}
+
+.card-ia h3 {
+    font-size: 21px; /* Remplacement de 1.35rem */
+    color: white;
+    margin-bottom: 8px;
+}
+
+/* Badges Local / Cloud */
+.badge {
+    display: inline-block;
+    font-size: 12px; /* Remplacement de 0.75rem */
+    font-weight: 700;
+    padding: 3px 8px; /* Remplacement des rems */
+    border-radius: 4px;
+    margin-bottom: 19px; /* Remplacement de 1.2rem */
+}
+.badge-cloud { background-color: #1e3a8a; color: #93c5fd; }
+.badge-local { background-color: #064e3b; color: #6ee7b7; }
+
+.card-ia p {
+    font-size: 14px; /* Remplacement de 0.9rem */
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.card-ia p strong {
+    color: #cbd5e1;
+}
+
+.btn-card {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px; /* Remplacement de 0.9rem */
+    padding: 10px;   /* Remplacement de 0.6rem */
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-card:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.no-result {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px; /* Remplacement de 3rem */
+    color: var(--text-muted);
+    font-size: 18px; /* Remplacement de 1.1rem */
+}
+
+/* ==========================================================================
+   7. FOOTER & RESPONSIVE
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 32px; /* Remplacement de 2rem */
+    border-top: 1px solid var(--border-color);
+    color: #475569;
+    font-size: 14px; /* Remplacement de 0.85rem */
+}
+
+/* Adaptations Tablettes & Mobiles (Spécification Obligatoire) */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 35px; } /* Remplacement de 2.2rem */
+    .hero-section p { font-size: 16px; }  /* Remplacement de 1rem */
+    .wizard-box, .results-box { padding: 24px; } /* Remplacement de 1.5rem */
+    .navbar { padding: 16px; } /* Remplacement de 1rem */
+}

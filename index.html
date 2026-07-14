@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientation IA - Trouve ton outil idéal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🎯 Orientation IA</div>
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#categories-section">Découvrir par Catégorie</a>
+            <a href="#moteur">Trouver une IA (Orientation)</a>
+        </div>
+    </nav>
+
+    <header id="accueil" class="hero-section">
+        <h1>Découvre l'Intelligence Artificielle faite pour toi</h1>
+        <p>Analyse tes besoins et trouve la solution d'IA la plus adaptée à ton profil et à tes contraintes.</p>
+        <a href="#moteur" class="btn-main">Commencer mon orientation IA 🚀</a>
+    </header>
+
+    <section id="categories-section" class="container" style="margin-top: 40px; margin-bottom: 60px;">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 10px; font-size: 28px;">Aperçu de notre Catalogue d'IA</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Explore quelques modèles phares classés par domaine d'application avant de lancer ton diagnostic.</p>
+        
+        <div class="grid-ia" id="vitrine-categories">
+            </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#moteur" class="btn-main" style="background-color: var(--secondary);">Lancer le Questionnaire d'Orientation Personnalisé 🎯</a>
+        </div>
+    </section>
+
+    <main id="moteur" class="container" style="border-top: 1px solid #334155; padding-top: 40px;">
+        <section class="wizard-box">
+            <h2>⚙️ Votre Questionnaire d'Orientation</h2>
+            <p>Sélectionnez précisément vos contraintes pour filtrer et classer l'intégralité de la base de données.</p>
+            
+            <form id="form-orientation" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="critere-installation">🛠️ Type d'installation requis :</label>
+                    <select id="critere-installation">
+                        <option value="Tous">Peu importe (Sur internet ou installé sur mon PC)</option>
+                        <option value="Local">Strictement en Local (Installé sur mon PC - Sécurité maximale)</option>
+                        <option value="serveur">Sur Serveur / Cloud / SAAS (Directement accessible sur internet)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="critere-utilite">🎯 Domaine d'utilisation principale :</label>
+                    <select id="critere-utilite">
+                        <option value="Tous">Tous les domaines</option>
+                        <option value="Généraliste">Assistant généraliste (Discuter, rédiger, résumer)</option>
+                        <option value="Programmation">Développement / Programmation (Écrire du code informatique)</option>
+                        <option value="Image">Création visuelle (Générer des images, logos, graphismes)</option>
+                        <option value="Recherche">Recherche et Éducation (Analyser des documents, réviser)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="critere-format">📂 Format de l'application :</label>
+                    <select id="critere-format">
+                        <option value="Tous">Peu importe (Gratuit/Payant, Libre ou Privé)</option>
+                        <option value="Open Source">Open Source (Technologie libre, transparente et modifiable)</option>
+                        <option value="Propriétaire">Logiciel propriétaire (Entreprise privée commerciale)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="critere-profil">👥 Votre profil d'utilisation :</label>
+                    <select id="critere-profil">
+                        <option value="Tous">Peu importe (Particulier, Étudiant ou Professionnel)</option>
+                        <option value="Professionnel">Professionnel / Entreprise (Exigences de confidentialité pour mes clients)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="critere-performance">🧠 Puissance de réflexion de l'IA requise :</label>
+                    <select id="critere-performance">
+                        <option value="Standard">Modèle Standard (Discussions courantes, rapidité et efficacité)</option>
+                        <option value="Expert">Modèle Expert / Raisonnement complexe (Mathématiques, logique pure, sciences)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="critere-contexte">📚 Taille des textes à analyser en une seule fois :</label>
+                    <select id="critere-contexte">
+                        <option value="Standard">Textes normaux (Discussions fluides, mails, courts articles)</option>
+                        <option value="Gros">Documents massifs (Livres complets, gros fichiers PDF, longs codes)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="critere-langue">🗣️ Langue de travail indispensable :</label>
+                    <select id="critere-langue">
+                        <option value="Tous">Peu importe (L'Anglais ne me dérange pas)</option>
+                        <option value="Francais">Doit comprendre et répondre parfaitement en Français</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="critere-gratuit"> 
+                        <span>🎁 Afficher en priorité les IA disposant d'une <strong>version gratuite</strong></span>
+                    </label>
+                </div>
+
+                <button type="button" id="btn-recommander" class="btn-submit">Calculer mes recommandations personnalisées 📊</button>
+            </form>
+        </section>
+
+        <section id="resultats-section" class="results-box hidden" style="margin-top: 30px;">
+            <h2>🏆 Vos IA Recommandées (Par pertinence)</h2>
+            <div id="liste-ia" class="grid-ia"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Projet de Soutenance Bac TI - Assistant Intelligent d'Orientation IA</p>
+    </footer>
+</body>
+</html>
