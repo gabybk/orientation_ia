@@ -120,6 +120,30 @@
             <div id="liste-ia" class="grid-ia"></div>
         </section>
     </main>
+    <div id="chatbot-bubble" onclick="toggleChatbot()">
+    💬
+</div>
+
+<div id="chatbot-window" class="hidden">
+<div class="chatbot-header">
+        <span>🤖 Conseiller IA (Cabinet Shauri)</span>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button onclick="reinitialiserChatbot()" title="Réinitialiser la discussion" style="background:none; border:none; color:white; font-size:16px; cursor:pointer;">🔄</button>
+            <button onclick="toggleChatbot()" style="background:none; border:none; color:white; font-size:16px; cursor:pointer;">✖</button>
+        </div>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+        <div class="message bot-message">
+            Bonjour ! Je suis l'assistant virtuel du cabinet Shauri. 😊
+        </div>
+        <div class="message bot-message">
+            Je vais vous poser quelques questions pour trouver l'IA idéale pour votre PME ou vos études au Cameroun. On commence ?
+        </div>
+    </div>
+    <div class="chatbot-input-area" id="chatbot-options">
+        <button class="btn-chat-option" onclick="demarrerDiagnostic()">Oui, c'est parti ! 🚀</button>
+    </div>
+</div>
 
     <footer>
         <p>© 2026 - Projet de Soutenance Bac TI - Assistant Intelligent d'Orientation IA</p>
