@@ -1,6 +1,6 @@
 // Configuration Supabase
 const SUPABASE_URL = "https://ohlxeskhravwrjumgtqs.supabase.co/rest/v1/";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9obHhlc2tocmF2d3JqdW1ndHFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2NjgxNDYsImV4cCI6MjA5OTI0NDE0Nn0.KYjyx6SRdiq7D2gPB39lpHi6DhqiOXpQopSVC-Z-iSM";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVhaW1pbG1xdHdtdXJydHdwa2tmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2Njk2OTMsImV4cCI6MjA5OTI0NTY5M30.IGGSP2r7iu8IqAspYdITlhomUuDWOMK_9BDASXxMerA";
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
